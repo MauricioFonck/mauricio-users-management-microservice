@@ -10,6 +10,10 @@ La guía lo hace desde el *SQL Editor* de TiDB y desde el IDE; aquí se ejecutó
 
 ![Esquema en TiDB](img/30-tidb-esquema-cargado.png)
 
+Vista del *SQL Editor* de TiDB Cloud con la base `crud_usuarios` y las columnas de `users` (`id`, `name`, `email`, `password`, `role`, `status`, `created_at`, `updated_at`):
+
+![SQL Editor de TiDB](img/32-tidb-sql-editor-schemas.png)
+
 ## 3. Prueba local contra TiDB
 Variables (en el `.env` local, ignorado por git): `DB_HOST`, `DB_PORT=4000`, `DB_NAME=crud_usuarios`, `DB_USERNAME`, `DB_PASSWORD` y **`DB_SSL_MODE=VERIFY_IDENTITY`** (verifica el certificado y el nombre del servidor). El usuario de TiDB lleva un prefijo (`<id>.root`).
 
