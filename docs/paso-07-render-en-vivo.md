@@ -7,6 +7,11 @@ URL pública: $u
 - Spring Boot arrancó y se conectó a Aiven: `HikariPool-1 - Start completed`.
 - Render: **Your service is live**.
 
+Capturas del panel de Render:
+
+![Deploy en progreso](img/27-render-deploy-en-progreso.png)
+![Deploy succeeded, Live y URL](img/28-render-deploy-succeeded-live.png)
+
 ## Pruebas desde la terminal
 
 ![Pruebas en la nube](img/26-render-pruebas-en-la-nube.png)
