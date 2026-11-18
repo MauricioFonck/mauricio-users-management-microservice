@@ -10,3 +10,4 @@ Guías base: Guía 1 a 5 (clonar y levantar, BD remota, despliegue PaaS + CI/CD,
 | 03 | [Verificación de la API en local](paso-03-verificacion-api-local.md) | Guía 2 (previo) |
 | 04 | [Creación de cuentas cloud](paso-04-cuentas-cloud.md) | Guías 2–5 |
 | 05 | [Aiven: esquema cargado y app conectada](paso-05-aiven-conectado.md) | Guía 2 |
+| 06 | [Despliegue en Render](paso-06-render-despliegue.md) | Guía 3 |
