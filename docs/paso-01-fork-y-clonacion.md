@@ -24,4 +24,4 @@
 | IntelliJ IDEA | No detectado |
 
 ## Capturas
-_Pendiente: agregar en `docs/img/` (por ejemplo `01-fork.png`)._
+_Paso realizado desde la terminal con `gh`; sin capturas de GitHub web._
