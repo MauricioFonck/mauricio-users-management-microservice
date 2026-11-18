@@ -96,6 +96,12 @@ El servicio quedó disponible en la URL pública. Se verificó el estado, la doc
 
 ![Pruebas contra la URL pública](img/26-render-pruebas-en-la-nube.png)
 
+Inicio de sesión desde Swagger UI en la API desplegada: petición con el administrador inicial y respuesta **200** con el token JWT (el valor del token se ocultó en la captura).
+
+![Swagger: petición de login](img/39-swagger-login-peticion.png)
+
+![Swagger: login con respuesta 200 y token JWT](img/40-swagger-login-200.png)
+
 ### 3.4 Guía 4 — Migración a TiDB Cloud
 
 Se creó una instancia TiDB Cloud Starter (plan gratuito sin vencimiento, compatible con MySQL), se cargó el mismo esquema y se cambiaron las variables de conexión, con `DB_SSL_MODE=VERIFY_IDENTITY` para validar el certificado del servidor.
@@ -122,7 +128,15 @@ Render bloquea los puertos SMTP en el plan gratuito, por lo que se integró la r
 
 ![Pull Request #1 fusionado](img/37-github-pull-request-1.png)
 
-Prueba extremo a extremo: se creó un usuario desde la API pública y Brevo registró el envío del correo transaccional «Tu cuenta ha sido creada — Gestion de Usuarios».
+Prueba extremo a extremo desde Swagger UI en la URL pública: se creó un usuario con `POST /api/users` (respuesta **201**, estado `PENDING`) y la API envió el correo de bienvenida a través de Brevo.
+
+![Swagger: petición para crear usuario](img/41-swagger-crear-usuario-peticion.png)
+
+![Swagger: usuario creado, respuesta 201](img/42-swagger-crear-usuario-201.png)
+
+El registro transaccional de Brevo confirma que el correo «Tu cuenta ha sido creada — Gestion de Usuarios» se envió y se **entregó** un segundo después de crear el usuario.
+
+![Brevo: correo enviado y entregado](img/43-brevo-correo-entregado.png)
 
 ## 4. Control de versiones
 
@@ -182,7 +196,8 @@ El microservicio quedó funcionando de punta a punta en producción: API REST p�
 | 4 | Esquema y SQL Editor en TiDB (§3.4) | La base de datos remota existe con la tabla `users` |
 | 5 | Pruebas contra la URL pública (§3.3) | Login, endpoint protegido (200) y acceso sin token (401) |
 | 6 | Pull Request #1 e historial de commits (§3.5, §4) | Integración de Brevo y autoría de los cambios |
-| 7 | Brevo: claves e IP autorizadas (§3.5) | Servicio de correo configurado |
+| 7 | Login 200 y creación de usuario 201 en Swagger (§3.3, §3.5) | La API pública autentica y crea usuarios |
+| 8 | Correo enviado y entregado, registro de Brevo (§3.5) | Las notificaciones funcionan en producción |
 
 ## Anexo B — Documentación completa
 

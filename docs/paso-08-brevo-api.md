@@ -36,5 +36,16 @@ Las `SMTP_*` quedaron obsoletas y se eliminaron. Los valores viven en el `.env` 
 - En local: se creó un usuario de prueba y el log mostró `correo aceptado por Brevo`.
 - En Render (URL pública): `POST /api/users` → 201 y el registro transaccional de Brevo muestra el correo **"Tu cuenta ha sido creada — Gestion de Usuarios"**. Los usuarios de prueba se borraron después.
 
+## 6. Evidencias desde Swagger UI (producción)
+Login con el administrador inicial (respuesta 200 con JWT, token ocultado):
+
+![Login 200](img/40-swagger-login-200.png)
+
+Creación de un usuario con `POST /api/users` (201) y registro de Brevo con el correo entregado:
+
+![Crear usuario 201](img/42-swagger-crear-usuario-201.png)
+
+![Correo entregado](img/43-brevo-correo-entregado.png)
+
 ## Nota de seguridad
 La plantilla `user-created.html` incluye una contraseña temporal en el correo (código del instructor). Es aceptable en un taller; en producción se debería enviar un enlace de un solo uso.
