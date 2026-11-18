@@ -14,3 +14,5 @@ Guías base: Guía 1 a 5 (clonar y levantar, BD remota, despliegue PaaS + CI/CD,
 | 07 | [Render en vivo y pruebas](paso-07-render-en-vivo.md) | Guía 3 |
 | 08 | [Brevo: correo por API](paso-08-brevo-api.md) | Guía 5 |
 | 09 | [Migración a TiDB](paso-09-tidb.md) | Guía 4 |
+
+**Informe final:** [INFORME.md](INFORME.md) (resumen técnico completo del proyecto con capturas).
